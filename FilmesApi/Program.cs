@@ -14,6 +14,8 @@ if (string.IsNullOrEmpty(connectionString))
 builder.Services.AddDbContext<FilmeContext>(options =>
     options.UseSqlServer(connectionString));
 
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
 // Add services to the container.
 
 builder.Services.AddControllers();
