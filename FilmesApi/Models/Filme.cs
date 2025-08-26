@@ -7,6 +7,7 @@ public class Filme
     [Required]
     public int Id { get; set; }
     [Required(ErrorMessage = "O campo Titulo é obrigatório.")]
+    [MaxLength(100, ErrorMessage = "O campo Título não pode exceder 100 caracteres.")]
     public string Titulo { get; set; }
 
     [Required(ErrorMessage = "O campo Genero é obrigatório.")]

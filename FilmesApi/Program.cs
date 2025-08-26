@@ -4,9 +4,15 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 var connectionString = builder.Configuration.GetConnectionString("FilmeConnection");
+Console.WriteLine($"Connection String: {connectionString}"); // Debug
+
+if (string.IsNullOrEmpty(connectionString))
+{
+    throw new Exception("Connection string não encontrada!");
+}
 
 builder.Services.AddDbContext<FilmeContext>(options =>
-    options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
+    options.UseSqlServer(connectionString));
 
 // Add services to the container.
 
