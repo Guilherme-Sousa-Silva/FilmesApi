@@ -47,7 +47,7 @@ Abra o navegador e acesse:
 - `PUT /Filme`  
   Atualiza os dados de um filme existente.
 
-- `DELETE /Filme/id?id={id}`  
+- `DELETE /Filme/{id}`  
   Remove um filme pelo ID.
 
 ## Estrutura dos DTOs
